@@ -1,0 +1,12 @@
+.idea/
+out/
+.gradle/
+build/
+
+*.iml
+*.class
+
+orbits.csv
+
+.DS_Store
+Thumbs.db
