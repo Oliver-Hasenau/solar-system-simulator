@@ -1,6 +1,7 @@
 # Solar System Simulator
 
 A Java-based N-body simulation project modeling celestial bodies such as stars, planets, moons, asteroids, comets and compact stellar objects.
+![Build](https://github.com/Oliver-Hasenau/solar-system-simulator/actions/workflows/build.yml/badge.svg)
 
 ## Features
 
