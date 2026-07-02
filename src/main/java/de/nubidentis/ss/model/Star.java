@@ -6,20 +6,29 @@ public class Star extends CelestialBody {
     private double luminosity;
     private String spectralType;
 
-    // Empfohlener voller Konstruktor
-    public Star(String name, double mass, Vector3D position, Vector3D velocity,
-                double luminosity, String spectralType) {
+    public Star(
+            String name,
+            double mass,
+            Vector3D position,
+            Vector3D velocity,
+            double luminosity,
+            String spectralType) {
+
         super(name, mass, position, velocity);
         this.luminosity = luminosity;
         this.spectralType = spectralType;
     }
 
-    public Star() {
-    }
+    public Star(
+            String name,
+            double mass,
+            Vector3D position,
+            Vector3D velocity,
+            double radius,
+            double luminosity,
+            String spectralType) {
 
-    // (Optional) Behalte diesen nur, wenn du ihn wirklich brauchst:
-    public Star(double luminosity, String spectralType) {
-        super(null, 0.0, null, null);
+        super(name, mass, position, velocity, radius);
         this.luminosity = luminosity;
         this.spectralType = spectralType;
     }

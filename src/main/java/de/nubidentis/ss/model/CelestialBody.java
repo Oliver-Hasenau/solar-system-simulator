@@ -7,16 +7,30 @@ public abstract class CelestialBody {
     protected double mass;
     protected Vector3D position;
     protected Vector3D velocity;
+    protected double radius;
 
-    // Neuer, empfohlener Basis-Konstruktor
-    protected CelestialBody(String name, double mass, Vector3D position, Vector3D velocity) {
+
+    // Konstruktoren
+    protected CelestialBody(
+            String name,
+            double mass,
+            Vector3D position,
+            Vector3D velocity) {
+
+        this(name, mass, position, velocity, 0.0);
+    }
+
+    protected CelestialBody(
+            String name,
+            double mass,
+            Vector3D position,
+            Vector3D velocity,
+            double radius) {
         this.name = name;
         this.mass = mass;
         this.position = position;
         this.velocity = velocity;
-    }
-
-    public CelestialBody() {
+        this.radius = radius;
     }
 
     // Getter/Setter wie bei dir vorhanden …
@@ -52,13 +66,28 @@ public abstract class CelestialBody {
         this.velocity = velocity;
     }
 
+    public double getRadius() {
+        return radius;
+    }
+
+    public void setRadius(double radius) {
+        this.radius = radius;
+    }
+
     @Override
     public String toString() {
-        return String.format("%s{name='%s', mass=%.3e, pos=(%.3e,%.3e,%.3e), vel=(%.3e,%.3e,%.3e)}",
-                getClass().getSimpleName(), name, mass,
+        return String.format(
+                "%s{name='%s', mass=%.3e, radius=%.3e, pos=(%.3e,%.3e,%.3e), vel=(%.3e,%.3e,%.3e)}",
+
+                getClass().getSimpleName(),
+                name,
+                mass,
+                radius,
+
                 position != null ? position.getX() : 0.0,
                 position != null ? position.getY() : 0.0,
                 position != null ? position.getZ() : 0.0,
+
                 velocity != null ? velocity.getX() : 0.0,
                 velocity != null ? velocity.getY() : 0.0,
                 velocity != null ? velocity.getZ() : 0.0
